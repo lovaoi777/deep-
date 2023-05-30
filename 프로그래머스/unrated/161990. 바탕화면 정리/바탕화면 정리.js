@@ -12,6 +12,7 @@ function solution(wallpaper) {
              }
         })
     })
+    console.log(min)
     let result = [min[0][0]]
     let a = [min[0][1]]
     let b = [min[0][2]]

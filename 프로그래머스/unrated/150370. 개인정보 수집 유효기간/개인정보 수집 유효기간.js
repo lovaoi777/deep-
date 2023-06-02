@@ -1,41 +1,6 @@
-// function solution(today, terms, privacies) {
-//     var answer = [];
-//     let t1 = []
-//     let t2 = []
-//     let time = today.split('.')
-//     //terms 나누기
-//     for(let i=0;i<terms.length;i++){
-//         let [a,b]=terms[i].split(' ')
-//         t1.push(a)
-//         t2.push(b)
-//     }
-//     privacies.map((element,index) => { 
-//         let[num1,num2]=element.split(' ')
-//         let sc = t1.indexOf(num2);
-//         num1=num1.split('.')
-//         num1[1]=Number(num1[1])+Number(t2[sc])
-//         count=Number(num1[1])-12
-//         if(Number(num1[1])>=13){
-//             num1[1]=count
-//             num1[0]=Number(num1[0])+1
-//             if(num1[1]<10){
-//                 num1[1]= '0' + num1[1]
-//                 console.log(num1[1])
-//             }
-// }   
-//         if(time[0]>num1[0]){
-//             answer.push(index+1)
-//         }
-//         if(time[1]>num1[1]&&time[0]==num1[0]){
-//             answer.push(index+1)
-//         }
-//         if(time[2]>=num1[2] &&time[1]==num1[1]&&time[0]==num1[0])
-//             answer.push(index+1)
-//     })
-    
-    
-//     return answer.sort((a,b)=>a-b);
-// }
+
+
+
 
 function checkvalidity(today, date, validity) {
   let [y1, m1, d1] = today.split(".").map(Number),

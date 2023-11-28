@@ -1,30 +1,46 @@
-// 1:20 ~ 1:29 
 function solution(want, number, discount) {
-    let answer = 0;
-    const wantSet = {}
-    want.forEach((meal,idx)=>{
-        wantSet[meal] = number[idx]
+    var answer = 0;
+    var map = [];
+    
+    want.map((e,index)=> {
+        map[e]=number[index];
     })
-
-    discount.forEach((_,idx)=>{
-        const discountTarget = discount.slice(idx,idx + 10)
-
-        const copyWantSet = {...wantSet}
-        discountTarget.forEach((meal)=>{
-            if(copyWantSet[meal]){
-                copyWantSet[meal]--
+    discount.forEach((element,index)=> { 
+        var list = discount.slice(index,index+10)
+        
+        var choiceWant = {...map}
+        list.forEach((element)=>{
+            if(choiceWant[element]){
+                choiceWant[element]--
             }
-            if(copyWantSet[meal] === 0){
-                delete copyWantSet[meal]
+            if(choiceWant[element]==0){
+                delete choiceWant[element]
             }
         })
-
-        if(Object.keys(copyWantSet).length === 0){
-            answer++
-        }
+      if (Object.keys(choiceWant).length==0){
+          answer++
+      }
     })
     return answer;
 }
-//1. 일정한 금액을 지불하면 10일동안 회원 자격부여 
-//want.length == number 
-// 치킨, 사과, 사과, 바나나, 쌀, 사과, 돼지고기, 바나나, 돼지고기, 쌀, 냄비, 바나나, 사과, 바나나
+
+
+
+//     discount.forEach((_,idx)=>{
+//         const discountTarget = discount.slice(idx,idx + 10)
+
+//         const copyWantSet = {...wantSet}
+//         discountTarget.forEach((meal)=>{
+//             if(copyWantSet[meal]){
+//                 copyWantSet[meal]--
+//             }
+//             if(copyWantSet[meal] === 0){
+//                 delete copyWantSet[meal]
+//             }
+//         })
+
+//         if(Object.keys(copyWantSet).length === 0){
+//             answer++
+//         }
+//     })
+//     return answer;

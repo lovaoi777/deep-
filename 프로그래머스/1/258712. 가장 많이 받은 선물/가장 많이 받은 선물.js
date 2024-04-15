@@ -19,44 +19,6 @@
 //     console.log(User)
 //     return answer;
 // }
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
 function solution(friends, gifts) {
   let answer = {}
   let statistic = {}
@@ -71,12 +33,14 @@ function solution(friends, gifts) {
       }
     }
   }
+
   for (const cur of gifts) {
     let [from,to] = cur.split(' ')
     statistic[from] = statistic[from]+1
     statistic[to] = statistic[to]-1
     idxStatistic[from][to] = idxStatistic[from][to]+1
   }
+        console.log(idxStatistic)
   for (const from in idxStatistic) {
     for (const to in idxStatistic[from]) {
       if(idxStatistic[from][to] === 0 && idxStatistic[to][from] === 0 || idxStatistic[from][to] === idxStatistic[to][from]){

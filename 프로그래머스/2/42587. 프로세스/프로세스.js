@@ -14,8 +14,10 @@ function solution(priorities, location) {
         else { 
             answer+=1;
             priorities.shift();
-            if(list.shift() == location)
+            if(list.shift() == location){
+                console.log(list.shift() == location)
                 return answer;
+            }
         }
     }
 }
